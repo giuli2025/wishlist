@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Il compleanno di Giulia 🎉</title>
+  <meta name="description" content="La lista dei regali per il compleanno di Giulia. La vostra presenza sarà il regalo più bello!" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌼</text></svg>" />
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="decoration" aria-hidden="true">
+    <span class="petal p1"></span><span class="petal p2"></span><span class="petal p3"></span>
+    <span class="leaf l1"></span><span class="leaf l2"></span><span class="sun"></span>
+  </div>
+
+  <header class="site-header">
+    <p class="eyebrow">IL PRIMO GIRO INTORNO AL SOLE</p>
+    <h1 class="title"><span id="festa-titolo">Giulia</span></h1>
+    <p class="turning">COMPIE <span id="festa-eta"></span> ANNO</p>
+    <p class="subtitle" id="festa-sottotitolo"></p>
+  </header>
+
+  <main class="page">
+    <section class="wishes-note" aria-labelledby="wishes-note-title">
+      <p class="wishes-note-lead" id="wishes-note-title">Manca poco al primo compleanno di Giulia! 🎉</p>
+      <p>Non è necessario nessun regalo: ci basta la vostra presenza per spegnere la candelina insieme! Se vorrete scriverle un bigliettino di auguri, lo metteremo nel suo album dei ricordi, così potrà vederlo tra qualche anno.</p>
+      <p>Se ci tenete comunque a farle un piccolo pensiero, ecco tre nostre piccole preferenze:</p>
+      <ul class="wishes-note-list">
+        <li><span aria-hidden="true">🌎</span><div><strong>Puntiamo all'utile o al futuro.</strong> In questa pagina trovate alcune cose di cui ha bisogno o che potrebbero piacerle. Altrimenti, abbiamo creato un <strong>“Fondo desideri da grande”</strong>: un fondo che investiamo a lungo termine per i suoi desideri futuri, tutti i soldini che riceve Giulia finiscono lì!</div></li>
+        <li><span aria-hidden="true">🌱</span><div><strong>Sì al riciclo.</strong> Vinted, mercatini dell'usato e oggetti di seconda mano a cui dare una nuova vita sono super approvati!</div></li>
+        <li><span aria-hidden="true">👕</span><div><strong>Bando ai vestiti!</strong> Fortunatamente Giulia ha già ricevuto tanti abiti dalle sue amichette più grandi e cresce in fretta: non riusciremmo a sfruttarli come si deve. I capi di vestiario di cui ha bisogno sono in lista qui sotto!</div></li>
+      </ul>
+      <p class="wishes-note-signoff">Ci vediamo presto!</p>
+    </section>
+
+    <section class="section intro" aria-label="Introduzione alla lista regali">
+      <h2 class="section-title">Lista dei regali <span class="flower" aria-hidden="true">🌼</span></h2>
+      <div class="tag-filters" id="tag-filters" aria-label="Filtra per tag"></div>
+    </section>
+
+    <section class="section lista" aria-label="Lista regali">
+      <div class="gifts grid" id="gifts"></div>
+      <p class="empty" id="empty" hidden>La lista è vuota per ora. Torna presto! 🌻</p>
+    </section>
+
+    <footer class="site-footer">
+      <p>Grazie di essere con noi! <span class="flower" aria-hidden="true">🌻</span></p>
+    </footer>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
