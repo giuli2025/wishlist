@@ -32,9 +32,10 @@ js/app.js        → logica (fetch CSV, stato, render, polling)
 
 ---
 
-## Configurazione rapida
+## Configurazione
 
-Tutto si edita in `js/config.js`.
+Tutto è configurato in `js/config.js`. Qui sotto trovi lo stato attuale e come
+modificarlo. Form e repo sono già pronti.
 
 ### 1. Google Sheet "Regali"
 
@@ -57,31 +58,32 @@ Nel `CONFIG` imposta `spreadsheetId` = l'id nel link dello sheet.
 **Pubblica lo sheet:** *File → Condividi → Pubblica nel web → CSV*, e salva.
 (Mi raccomando: il sito legge il CSV; senza pubblicazione non funziona.)
 
-### 2. Google Form (da creare)
+### 2. Google Form (già creato)
 
-Crea un modulo con 4 campi:
+Il modulo è già pronto: si apre con link precompilati per **ID regalo**,
+**Titolo** e **Tipo azione** (valori `Lo acquisto io!` / `Contribuisco con una
+quota a questo regalo`). È collegato a uno Sheet "Risposte".
 
-1. **Nome** — obbligatorio
-2. **Messaggio** — facoltativo
-3. **ID regalo** — campo nascosto / precompilato tramite URL
-4. **Tipo azione** — campo nascosto / precompilato tramite URL (valori `acquisto` / `contributo`)
-
-Collega il modulo a uno Sheet "Risposte" (l'opzione crea lo sheet automaticamente).
-
-Poi riempi in `config.js`:
+In `config.js` è già impostato:
 
 ```js
 form: {
-  baseUrl: "https://docs.google.com/forms/d/e/FORM_ID/viewform?usp=pp_url",
+  baseUrl: "https://docs.google.com/forms/d/e/1FAIpQLS.../viewform",
   entries: {
-    id:   "entry.1234567890", // entry del campo "ID regalo"
-    tipo: "entry.0987654321", // entry del campo "Tipo azione"
-  }
+    id:    "entry.2025041747", // campo "ID regalo"
+    titolo: "entry.1341644938", // campo "Titolo"
+    tipo:  "entry.2049914023", // campo "Tipo azione"
+  },
 },
-answersSpreadsheetId: "ID_DEL_SHEET_RISPOSTE",
+answersSpreadsheetId: "1YdvJZ3F7r70ujz2G43VwCQi_U6vH1wQSRaGBRaSFQas",
+answersSheetGid: "1900763737",
 ```
 
-> **Come trovare gli `entry.xxxx`:** nell'editor del Form apri il menu `⋮` → **Ottieni link precompilato**, inserisci valori di prova nei campi "ID regalo" e "Tipo azione", quindi premi **Ottieni link**. I parametri `entry.xxxxxxxx=...` nell'URL generato sono gli ID da copiare. Lo Sheet "Risposte" serve inoltre per `answersSpreadsheetId`.
+> **Se ri-crei il Form o cambi i campi:** apri il menu `⋮` → **Ottieni link
+> precompilato**, inserisci valori di prova nei campi precompilati, premi
+> **Ottieni link** e copia i parametri `entry.xxxxxxxx=...` nell'URL per
+> aggiornare `form.entries`. Lo Sheet "Risposte" serve a `answersSpreadsheetId`
+> e `answersSheetGid` (gid da `?gid=` nel link dello sheet).
 
 ### 3. Titolo e introduzione
 
@@ -98,17 +100,15 @@ python3 -m http.server 8000
 
 ## Deploy su GitHub Pages
 
-Crea un repo GitHub e:
+Il repo è già online: `github.com/giuli2025/wishlist` (branch `main`).
 
 ```bash
-git init && git add . && git commit -m "feat: lista regali compleanno Giulia"
-git branch -M main
-git remote add origin git@github.com:TUO_USER/giuli-wishes.git
-git push -u origin main
+git add . && git commit -m "chore: aggiornamento readme"
+git push
 ```
 
-Nel repo: *Settings → Pages → Source: branch `main`*, e il sito è live su
-`https://TUO_USER.github.io/giuli-wishes/`.
+*Settings → Pages → Source: branch `main`*, e il sito è live su
+`https://giuli2025.github.io/wishlist/`.
 
 ---
 
