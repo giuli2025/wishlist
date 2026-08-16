@@ -45,7 +45,11 @@
   }
 
   async function fetchCsv(id, gid = "0") {
-    const url = `https://docs.google.com/spreadsheets/d/${id}/export?format=csv&gid=${encodeURIComponent(gid)}`;
+    // Cache-buster: il redirect 307 di /export può essere servito da un cache
+    // (snapshot stale). Ogni richiesta ha un URL nuovo -> dato sempre aggiornato.
+    const url =
+      `https://docs.google.com/spreadsheets/d/${id}/export?format=csv&gid=${encodeURIComponent(gid)}` +
+      `&_cb=${Date.now()}`;
     const res = await fetch(url, { cache: "no-store" });
     if (!res.ok) throw new Error("Sheet non raggiungibile (" + res.status + ")");
 
