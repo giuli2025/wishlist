@@ -140,12 +140,15 @@
     const fondo = CONFIG.fondoDesideri;
     return [fondo, ...items]
       .filter((g) => !g.hidden)
-      .map((g) => ({
-        ...g,
-        taken: !g.fondo && (g.preso || (answers.get(g.id) || {}).acquistato === true),
-        contributi: (answers.get(g.id) || {}).contributi || 0,
-        fondo: g.id === CONFIG.fondoDesideri.id,
-      }))
+      .map((g) => {
+        const isFondo = g.id === fondo.id;
+        return {
+          ...g,
+          fondo: isFondo,
+          taken: !isFondo && (g.preso || (answers.get(g.id) || {}).acquistato === true),
+          contributi: (answers.get(g.id) || {}).contributi || 0,
+        };
+      })
       .sort(
         (a, b) =>
           Number(a.taken) - Number(b.taken) ||
