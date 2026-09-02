@@ -377,3 +377,78 @@ body {
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
   html { scroll-behavior: auto; }
 }
+
+.how-it-works-wrapper {
+  margin: 4px 0 16px;
+  text-align: center;
+}
+
+.how-it-works-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  font-size: 0.95rem;
+  text-decoration: underline;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.how-it-works-link:hover {
+  opacity: 1;
+}
+
+/* Modal styling */
+.info-modal {
+  border: none;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 480px;
+  width: calc(100% - 32px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background: #ffffff;
+  color: #222222;
+  font-size: 0.95rem;
+}
+
+.info-modal::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+}
+
+.modal-content {
+  position: relative;
+}
+
+.modal-title {
+  margin: 0 0 16px;
+  font-size: 1.25rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  color: #666;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+.modal-list {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}

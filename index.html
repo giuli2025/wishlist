@@ -1,55 +1,103 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Il compleanno di Giulia 🎉</title>
-  <meta name="description" content="La lista dei regali per il compleanno di Giulia. La vostra presenza sarà il regalo più bello!" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌼</text></svg>" />
-  <link rel="stylesheet" href="css/fonts.css" />
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Il compleanno di Giulia 🎉</title>
+    <meta name="description"
+          content="La lista dei regali per il compleanno di Giulia. La vostra presenza sarà il regalo più bello!"/>
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌼</text></svg>"/>
+    <link rel="stylesheet" href="css/fonts.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-  <div class="decoration" aria-hidden="true">
+<div class="decoration" aria-hidden="true">
     <span class="petal p1"></span><span class="petal p2"></span><span class="petal p3"></span>
     <span class="leaf l1"></span><span class="leaf l2"></span><span class="sun"></span>
-  </div>
+</div>
 
-  <header class="site-header">
+<header class="site-header">
     <h1 class="title"><span id="festa-titolo">Giulia</span></h1>
     <p class="turning">COMPIE <span id="festa-eta"></span> ANNO</p>
     <p class="subtitle" id="festa-sottotitolo"></p>
-  </header>
+</header>
 
-  <main class="page">
+<main class="page">
     <section class="wishes-note" aria-labelledby="wishes-note-title">
-      <p class="wishes-note-lead" id="wishes-note-title">Manca poco al primo compleanno di Giulia! 🎉</p>
-      <p>Non è necessario nessun regalo: ci basta la vostra presenza per spegnere la candelina insieme! Se vorrete scriverle un bigliettino di auguri, lo metteremo nel suo album dei ricordi, così potrà vederlo tra qualche anno.</p>
-      <p>Se ci tenete comunque a farle un piccolo pensiero, ecco tre nostre piccole preferenze:</p>
-      <ul class="wishes-note-list">
-        <li><span aria-hidden="true">🌎</span><div><strong>Puntiamo all'utile o al futuro.</strong> In questa pagina trovate alcune cose di cui ha bisogno o che potrebbero piacerle. Altrimenti, abbiamo creato un <strong>“Fondo desideri da grande”</strong>: un fondo che investiamo a lungo termine per i suoi desideri futuri, tutti i soldini che riceve Giulia finiscono lì!<br>Se avete altre idee, scriveteci per evitare i doppioni!</div></li>
-        <li><span aria-hidden="true">🌱</span><div><strong>Sì al riciclo.</strong> Vinted, mercatini dell'usato e oggetti di seconda mano a cui dare una nuova vita sono super approvati!</div></li>
-        <li><span aria-hidden="true">👕</span><div><strong>Bando ai vestiti!</strong> Fortunatamente Giulia ha già ricevuto tanti abiti dalle sue amichette più grandi e cresce in fretta: non riusciremmo a sfruttarli come si deve. I capi di vestiario di cui ha bisogno sono in lista qui sotto!</div></li>
-      </ul>
-      <p class="wishes-note-signoff">Ci vediamo presto! 💛</p>
+        <p class="wishes-note-lead" id="wishes-note-title">Manca poco al primo compleanno di Giulia! 🎉</p>
+        <p>Lo sapete: non è necessario nessun regalo. Ci basta la vostra presenza per spegnere la candelina insieme! Se
+            vorrete scriverle un bigliettino di auguri, lo metteremo nel suo album dei ricordi, così potrà vederlo tra
+            qualche anno.</p>
+        <p>Se ci tenete comunque a farle un piccolo pensiero, ecco tre nostre piccole preferenze:</p>
+        <ul class="wishes-note-list">
+            <li><span aria-hidden="true">🌎</span>
+                <div><strong>Puntiamo all'utile o al futuro.</strong> In questa pagina trovate alcune cose che possono
+                    piacerle o servirle e non abbiamo ancora. In alternativa, abbiamo creato un <strong>“Fondo desideri
+                        da grande”</strong>: un fondo che investiamo a lungo termine per i suoi desideri futuri, tutti i
+                    soldini che riceve Giulia finiscono lì!<br>Se avete altre idee, sono benvenute: scriveteci solo per
+                    evitare i doppioni!
+                </div>
+            </li>
+            <li><span aria-hidden="true">🌱</span>
+                <div><strong>Sì al riciclo.</strong> Vinted, mercatini dell'usato e oggetti di seconda mano sono super
+                    approvati! Ci piace l'idea di dare una seconda vita a questi oggetti! 🕶️
+                </div>
+            </li>
+            <li><span aria-hidden="true">👕</span>
+                <div><strong>Bando ai vestiti!</strong> Fortunatamente Giulia ha già ricevuto tanti abiti dalle sue
+                    amichette più grandi e cresce in fretta: non riusciremmo a sfruttarli come si deve. I capi di
+                    vestiario di cui ha bisogno sono in lista qui sotto! Fanno eccezione i vestiti di seconda mano 😁
+                </div>
+            </li>
+        </ul>
+        <p class="wishes-note-signoff">Ci vediamo presto! 💛</p>
     </section>
 
     <section class="section intro" aria-label="Introduzione alla lista regali">
-      <h2 class="section-title">Lista dei regali <span class="flower" aria-hidden="true">🌼</span></h2>
-      <div class="tag-filters" id="tag-filters" aria-label="Filtra per tag"></div>
+        <h2 class="section-title">Idee regalo <span class="flower" aria-hidden="true">🌼</span></h2>
+
+        <p class="how-it-works-wrapper">
+            <button center type="button" class="how-it-works-link" onclick="document.getElementById('info-modal').showModal()">
+                Come funziona?
+            </button>
+        </p>
+
+        <div class="tag-filters" id="tag-filters" aria-label="Filtra per tag"></div>
     </section>
 
+    <!-- Modal dialog (native, accessible, zero-dependency) -->
+    <dialog id="info-modal" class="info-modal" onclick="if (event.target === this) this.close()">
+        <div class="modal-content">
+            <button type="button" class="modal-close" aria-label="Chiudi"
+                    onclick="document.getElementById('info-modal').close()">✕
+            </button>
+            <h3 class="modal-title">Come funziona?</h3>
+            <ul class="modal-list">
+                <li>Se trovi qualcosa che ti ispira e vuoi prendere, faccelo sapere così verrà rimosso dalla lista:
+                    premi <strong>"Lo prendo io"</strong> e compila il form.
+                </li>
+                <li>Se l'idea ti piace, e vuoi mettere una quota per prenderla o acquistare una parte di quel regalo:
+                    premi <strong>"Voglio contribuire"</strong> e compila il form.
+                </li>
+                <li>Se hai altre idee, scrivici solo per evitare i doppioni ☺️</li>
+            </ul>
+          <br>
+          P.s. Se scovi qualcosa che non funziona a dovere, faccelo sapere 🐛️
+        </div>
+    </dialog>
+
     <section class="section lista" aria-label="Lista regali">
-      <div class="gifts grid" id="gifts"></div>
-      <p class="empty" id="empty" hidden>La lista è vuota per ora. Torna presto! 🌻</p>
+        <div class="gifts grid" id="gifts"></div>
+        <p class="empty" id="empty" hidden>La lista è vuota per ora. Torna presto! 🌻</p>
     </section>
 
     <footer class="site-footer">
-      <p>Grazie di essere con noi! <span class="flower" aria-hidden="true">🌻</span></p>
+        <p>Grazie di essere con noi! <span class="flower" aria-hidden="true">🌻</span></p>
     </footer>
-  </main>
+</main>
 
-  <script src="js/config.js"></script>
-  <script src="js/app.js"></script>
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
