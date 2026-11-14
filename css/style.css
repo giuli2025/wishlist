@@ -157,13 +157,6 @@ body {
   color: var(--ink-soft);
 }
 .wishes-note p { margin: 0 0 1rem; }
-.wishes-note-lead {
-  color: var(--ink);
-  font-family: var(--font-title);
-  font-size: clamp(2rem, 5vw, 2.8rem);
-  font-weight: 500;
-  line-height: 1.1;
-}
 .wishes-note-list { list-style: none; padding: 0; margin: 1.25rem 0; display: grid; gap: 1rem; }
 .wishes-note-list li { display: grid; grid-template-columns: 2rem 1fr; gap: 0.6rem; align-items: start; }
 .wishes-note-list li > span { font-size: 1.25rem; line-height: 1.4; }
