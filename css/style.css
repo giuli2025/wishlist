@@ -1,7 +1,7 @@
 /* ============================================================
    giuli-wishes — Sunshine & Petals, versione invernale
    Palette: giallo sole · bianco/cream · verde salvia · bacche rosse
-   Font: Dancing Script (titoli) + Montserrat (testo)
+   Font: Parisienne (titoli) + Montserrat (testo)
    ============================================================ */
 
 :root {
@@ -22,7 +22,7 @@
   --shadow-lg:0 16px 40px rgba(120, 140, 100, 0.20);
   --radius:   22px;
   --radius-sm:14px;
-  --font-title: "Dancing Script", cursive;
+  --font-title: "Parisienne", cursive;
   --font-body:  "Montserrat", Arial, sans-serif;
 }
 
@@ -113,7 +113,7 @@ body {
 .title {
   font-family: var(--font-title);
   font-weight: 500;
-  font-size: clamp(2.2rem, 9vw, 7.5rem);
+  font-size: clamp(2.4rem, 10vw, 8rem);
   margin: -0.1em 0 -0.15em;
   color: #E7BA2F;
   letter-spacing: -0.025em;
