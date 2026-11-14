@@ -4,7 +4,7 @@ Sito **statico** (HTML + CSS + Vanilla JS) per la lista regali del compleanno di
 Hosting: **GitHub Pages**. Dati: **Google Sheets** (publici). Azioni: **Google Form** precompilati.
 Niente backend, niente database, niente autenticazione. È quindi compatibile con **GitHub Pages**.
 
-Tema **Sunshine & Petals**, in versione invernale: giallo sole, bianco/cream, verde salvia, neve e bacche rosse. Mobile-first.
+Tema **Sunshine & Petals**, in versione invernale: giallo sole, bianco/cream, verde pino, neve e bacche rosse. Mobile-first.
 
 ---
 
