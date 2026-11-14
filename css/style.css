@@ -1,27 +1,28 @@
 /* ============================================================
-   giuli-wishes — Sunshine & Petals
-   Palette: giallo sole · bianco/cream · verde salvia
-   Font: Caveat (titoli) + Nunito (testo)
+   giuli-wishes — Sunshine & Petals, versione invernale
+   Palette: giallo sole · bianco/cream · verde pino · bacche rosse
+   Font: Parisienne (titoli) + Montserrat (testo)
    ============================================================ */
 
 :root {
-  --cream:    #FFFBF1;
-  --cream-2:  #FFF6DF;
-  --sage:     #9CAF88;
-  --sage-deep:#6E8361;
-  --sage-soft:#DDE7D2;
+  --cream:    #FBFAF3;
+  --cream-2:  #F5F7EE;
+  --sage:     #7E9A6E;
+  --sage-deep:#2C5340;
+  --sage-soft:#DCE8D8;
   --sun:      #F6C453;
   --sun-soft: #FCE8B3;
+  --berry:    #B23A3A;
   --ink:      #33402F;
   --ink-soft: #6B7564;
   --white:    #FFFFFF;
-  --muted:    #E7E9E0;
+  --muted:    #E6EADF;
   --card-bg:  #FFFFFF;
-  --shadow:   0 10px 30px rgba(120, 140, 100, 0.14);
-  --shadow-lg:0 16px 40px rgba(120, 140, 100, 0.20);
+  --shadow:   0 10px 30px rgba(60, 90, 70, 0.14);
+  --shadow-lg:0 16px 40px rgba(60, 90, 70, 0.20);
   --radius:   22px;
   --radius-sm:14px;
-  --font-title: "Dancing Script", cursive;
+  --font-title: "Parisienne", cursive;
   --font-body:  "Montserrat", Arial, sans-serif;
 }
 
@@ -34,39 +35,62 @@ body {
   font-family: var(--font-body);
   color: var(--ink);
   background:
-    radial-gradient(1200px 500px at 50% -150px, var(--sun-soft) 0%, transparent 60%),
-    radial-gradient(900px 400px at 110% 20%, var(--sage-soft) 0%, transparent 55%),
-    linear-gradient(180deg, var(--cream) 0%, #FFFDF6 100%);
+    radial-gradient(1200px 500px at 50% -150px, #EFF4E6 0%, transparent 60%),
+    radial-gradient(900px 400px at 110% 20%, #E4EEDD 0%, transparent 55%),
+    linear-gradient(180deg, var(--cream) 0%, #F7FAF2 100%);
   background-attachment: fixed;
   line-height: 1.55;
   min-height: 100vh;
 }
 
-/* ---------- Decorazioni (sole + petali + foglie) ---------- */
+/* ---------- Decorazioni (sole basso + neve + rametti di pino) ---------- */
 .decoration { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
 .decoration > span { position: absolute; opacity: 0.55; }
 
-.petal {
-  width: 26px; height: 26px; border-radius: 50% 50% 50% 0;
-  background: radial-gradient(circle at 30% 30%, #FFE28A, #F9C25B);
-  box-shadow: inset -2px -2px 0 rgba(210, 150, 40, 0.15);
+/* Neve: due strati di puntini che scendono a velocità diverse.
+   Ogni strato trasla di esattamente una tile, così il loop non ha salti. */
+.decoration::before,
+.decoration::after {
+  content: "";
+  position: absolute;
+  top: -100%; left: 0; right: 0; bottom: 0;
+  background-repeat: repeat;
 }
-.p1 { top: 8%; left: 6%; transform: rotate(-20deg); }
-.p2 { top: 58%; left: 92%; transform: rotate(120deg); scale: 1.2; }
-.p3 { bottom: 6%; left: 10%; transform: rotate(40deg); scale: 0.9; }
-
-.leaf {
-  width: 22px; height: 34px; border-radius: 70% 0 70% 0;
-  background: linear-gradient(135deg, #B7CB9D, #8FAE8B);
+.decoration::before {
+  background-image: radial-gradient(circle,
+    rgba(160, 184, 212, 0.9) 0 1.9px,
+    rgba(160, 184, 212, 0.4) 3.1px,
+    transparent 4.1px);
+  background-size: 190px 270px;
+  background-position: 24px 0;
+  animation: snowFallA 10s linear infinite;
 }
-.l1 { top: 22%; right: 4%; transform: rotate(20deg); }
-.l2 { bottom: 24%; left: 3%; transform: rotate(-150deg); scale: 1.1; }
+.decoration::after {
+  background-image: radial-gradient(circle,
+    rgba(160, 184, 212, 0.6) 0 1.4px,
+    rgba(160, 184, 212, 0.25) 2.4px,
+    transparent 3.3px);
+  background-size: 130px 190px;
+  background-position: 68px 46px;
+  animation: snowFallB 6.5s linear infinite;
+}
+@keyframes snowFallA { from { transform: translateY(-270px); } to { transform: translateY(0); } }
+@keyframes snowFallB { from { transform: translateY(-190px); } to { transform: translateY(0); } }
 
+.sprig {
+  position: absolute;
+  width: clamp(90px, 11vw, 132px); height: auto;
+  color: var(--sage); opacity: 0.8;
+}
+.sprig-tr { top: -10px; right: -14px; transform: rotate(186deg); }
+.sprig-bl { bottom: -10px; left: -14px; transform: rotate(6deg); }
+
+/* Sole d'inverno: pallido, e su mobile scende in basso a destra */
 .sun {
-  width: 70px; height: 70px; border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #FFD97A, #F6C453);
-  box-shadow: 0 0 40px rgba(246, 196, 83, 0.7);
-  top: 3%; right: 10%;
+  width: 64px; height: 64px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #FFF4DC, #F6DCAC);
+  box-shadow: 0 0 42px rgba(246, 196, 83, 0.38);
+  top: 4%; right: 24%;
   animation: sunPulse 6s ease-in-out infinite;
 }
 @keyframes sunPulse {
@@ -77,7 +101,31 @@ body {
 .page { position: relative; z-index: 1; width: min(1080px, 100% - 2rem); margin: 0 auto; padding-bottom: 3rem; }
 
 /* ---------- Header ---------- */
-.site-header { text-align: center; padding: 4rem 1rem 2.5rem; position: relative; z-index: 1; }
+.site-header { text-align: center; padding: 4rem 1rem 4rem; position: relative; z-index: 1; }
+
+/* Fila di lucine sotto il titolo: puntini oro/rosso alternati che pulsano */
+.site-header::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 1.1rem;
+  transform: translateX(-50%);
+  width: min(520px, 76%);
+  height: 18px;
+  background-image:
+    radial-gradient(circle, #F0B93B 0 4px, rgba(240, 185, 59, 0.45) 4px 6px, transparent 6.5px),
+    radial-gradient(circle, #C4423A 0 4px, rgba(196, 66, 58, 0.38) 4px 6px, transparent 6.5px);
+  background-size: 34px 18px, 34px 18px;
+  background-position: 0 0, 17px 0;
+  background-repeat: repeat-x, repeat-x;
+  filter: drop-shadow(0 2px 6px rgba(240, 185, 59, 0.5));
+  animation: twinkle 3.6s ease-in-out infinite;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.62; }
+  50%      { opacity: 1; }
+}
+
 .eyebrow, .turning {
   color: var(--ink);
   font-size: clamp(0.7rem, 1.8vw, 0.93rem);
@@ -89,7 +137,7 @@ body {
 .title {
   font-family: var(--font-title);
   font-weight: 500;
-  font-size: clamp(4.4rem, 13vw, 8rem);
+  font-size: clamp(2.4rem, 10vw, 8rem);
   margin: -0.1em 0 -0.15em;
   color: #E7BA2F;
   letter-spacing: -0.025em;
@@ -123,23 +171,26 @@ body {
 .section { margin: 0 0 3rem; }
 
 .wishes-note {
+  position: relative;
+  overflow: hidden;
   max-width: 760px;
   margin: 0 auto 3.5rem;
   padding: clamp(1.5rem, 4vw, 2.5rem);
   background: var(--white);
-  border: 1px solid var(--sun-soft);
+  border: 1px solid #E7EDE1;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   color: var(--ink-soft);
 }
-.wishes-note p { margin: 0 0 1rem; }
-.wishes-note-lead {
-  color: var(--ink);
-  font-family: var(--font-title);
-  font-size: clamp(2rem, 5vw, 2.8rem);
-  font-weight: 500;
-  line-height: 1.1;
+/* Nastro rosso sul bordo alto della nota */
+.wishes-note::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 6px;
+  background: linear-gradient(90deg, #A93232, #D8563F);
 }
+.wishes-note p { margin: 0 0 1rem; }
 .wishes-note-list { list-style: none; padding: 0; margin: 1.25rem 0; display: grid; gap: 1rem; }
 .wishes-note-list li { display: grid; grid-template-columns: 2rem 1fr; gap: 0.6rem; align-items: start; }
 .wishes-note-list li > span { font-size: 1.25rem; line-height: 1.4; }
@@ -156,14 +207,15 @@ body {
   margin: 0 0 1rem;
   display: flex; align-items: center; justify-content: center; gap: 0.3em;
 }
-.flower { display: inline-block; }
+.flake { display: inline-block; color: var(--sage-deep); }
+.section-title .flake { font-size: 0.5em; color: var(--sage); }
 .tag-filters { display: flex; flex-wrap: wrap; gap: 0.45rem; justify-content: center; margin-top: 1rem; }
 .tag-filter {
-  background: var(--white); border: 1px solid var(--sage); border-radius: 0.4rem;
+  background: var(--white); border: 1px solid #B9CBAE; border-radius: 0.4rem;
   color: var(--sage-deep); cursor: pointer; font-family: var(--font-body);
   font-size: 0.68rem; font-weight: 600; padding: 0.4rem 0.65rem;
 }
-.tag-filter.active, .tag-filter:hover { background: var(--sun-soft); border-color: var(--sun); }
+.tag-filter.active, .tag-filter:hover { background: #F7DFD8; border-color: var(--berry); color: #8E2F2F; }
 
 .intro-text {
   text-align: center;
@@ -239,7 +291,7 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 .badge-taken { background: var(--sage-deep); color: #fff; }
-.badge-contributi { background: var(--sun); color: #5b4a12; left: auto; right: 10px; }
+.badge-contributi { background: var(--berry); color: #FFFBF1; left: auto; right: 10px; }
 .badge.pop { animation: pop 260ms ease; }
 @keyframes pop { 0% { transform: scale(0.7); } 60% { transform: scale(1.12); } 100% { transform: scale(1); } }
 
@@ -256,9 +308,9 @@ body {
 .card-prezzo { color: var(--sage-deep); font-weight: 800; font-size: 0.95rem; }
 .card-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
 .card-tag {
-  background: var(--sun-soft);
+  background: #EFF3E8;
   border-radius: 0.4rem;
-  color: var(--ink);
+  color: var(--sage-deep);
   font-size: 0.58rem;
   font-weight: 600;
   letter-spacing: 0.03em;
@@ -298,8 +350,8 @@ body {
 .btn {
   text-align: center; padding: 0.7rem 0.5rem;
 }
-.btn-primary { background: var(--sun); color: #5b4a12; box-shadow: 0 6px 14px rgba(246, 196, 83, 0.5); }
-.btn-primary:hover { transform: translateY(-2px); background: #FFD262; }
+.btn-primary { background: var(--sage-deep); color: var(--cream); box-shadow: 0 6px 14px rgba(44, 83, 64, 0.28); }
+.btn-primary:hover { transform: translateY(-2px); background: #35634C; }
 .btn-secondary { background: var(--white); color: var(--sage-deep); border: 2px solid var(--sage); }
 .btn-secondary:hover { transform: translateY(-2px); background: var(--sage-soft); }
 
@@ -360,7 +412,7 @@ body {
 
 /* ---------- Footer ---------- */
 .site-footer { text-align: center; color: var(--ink-soft); margin-top: 1rem; }
-.site-footer .flower { font-size: 1.2rem; }
+.site-footer .flake { font-size: 1.2rem; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 620px) {
@@ -370,6 +422,7 @@ body {
   .card-actions { grid-template-columns: 1fr; }
   .info-grid { grid-template-columns: 1fr; }
   .hero-frame { aspect-ratio: 4/3; }
+  .sun { top: auto; bottom: 6%; right: 10%; }
 }
 
 /* ---------- Reduced motion ---------- */

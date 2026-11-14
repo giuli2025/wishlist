@@ -4,7 +4,7 @@ Sito **statico** (HTML + CSS + Vanilla JS) per la lista regali del compleanno di
 Hosting: **GitHub Pages**. Dati: **Google Sheets** (publici). Azioni: **Google Form** precompilati.
 Niente backend, niente database, niente autenticazione. È quindi compatibile con **GitHub Pages**.
 
-Tema **Sunshine & Petals**: giallo sole, bianco/cream, verde salvia. Mobile-first.
+Tema **Sunshine & Petals**, in versione invernale: giallo sole, bianco/cream, verde pino, neve e bacche rosse. Mobile-first.
 
 ---
 
@@ -25,7 +25,7 @@ senza bisogno di ricaricare la pagina. I regali acquistati si spostano in fondo 
 
 ```
 index.html       → pagina
-css/style.css    → stile (tema Sunshine & Petals)
+css/style.css    → stile (tema Sunshine & Petals, decorazioni invernali)
 js/config.js     → ⚙️ QUI configuri tutto
 js/app.js        → logica (fetch CSV, stato, render, polling)
 ```
@@ -87,7 +87,7 @@ answersSheetGid: "1900763737",
 
 ### 3. Titolo e introduzione
 
-In `js/config.js` → `festa`: nome, età, titolo, sottotitolo e testo introduttivo della lista.
+In `js/config.js` → `festa`: nome, età (`eta` vuoto = nasconde la riga "COMPIE … ANNO"), titolo, emoji del tab, sottotitolo e testo introduttivo della lista.
 
 ---
 

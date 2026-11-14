@@ -1,8 +1,8 @@
 @font-face {
-  font-family: "Dancing Script";
-  src: url("../assets/fonts/DancingScript-Variable.ttf") format("truetype");
+  font-family: "Parisienne";
+  src: url("../assets/fonts/Parisienne-Regular.ttf") format("truetype");
   font-style: normal;
-  font-weight: 400 700;
+  font-weight: 400;
   font-display: swap;
 }
 

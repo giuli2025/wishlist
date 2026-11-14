@@ -3,51 +3,68 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Il compleanno di Giulia 🎉</title>
+    <title>Buon Natale! 🎄</title>
     <meta name="description"
           content="La lista dei regali per il compleanno di Giulia. La vostra presenza sarà il regalo più bello!"/>
     <link rel="icon"
-          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌼</text></svg>"/>
+          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❄︎</text></svg>"/>
     <link rel="stylesheet" href="css/fonts.css"/>
     <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
 <div class="decoration" aria-hidden="true">
-    <span class="petal p1"></span><span class="petal p2"></span><span class="petal p3"></span>
-    <span class="leaf l1"></span><span class="leaf l2"></span><span class="sun"></span>
+    <svg width="0" height="0" style="position:absolute" focusable="false">
+        <symbol id="sprig" viewBox="0 0 120 96">
+            <path d="M4 92 C 32 74, 64 46, 100 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <g stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none">
+                <path d="M18 81 L 6 71"/><path d="M28 74 L 16 62"/><path d="M38 67 L 26 55"/>
+                <path d="M48 60 L 38 48"/><path d="M58 52 L 50 39"/><path d="M68 45 L 62 32"/>
+                <path d="M78 37 L 74 24"/><path d="M88 29 L 86 17"/>
+                <path d="M18 81 L 30 71"/><path d="M28 74 L 42 65"/><path d="M38 67 L 52 59"/>
+                <path d="M48 60 L 62 52"/><path d="M58 52 L 72 46"/><path d="M68 45 L 82 40"/>
+                <path d="M78 37 L 92 34"/>
+            </g>
+        </symbol>
+    </svg>
+    <span class="sun"></span>
+    <svg class="sprig sprig-tr" viewBox="0 0 120 96">
+        <use href="#sprig"/>
+        <circle cx="40" cy="70" r="2.6" fill="var(--berry)"/>
+    </svg>
+    <svg class="sprig sprig-bl" viewBox="0 0 120 96">
+        <use href="#sprig"/>
+        <circle cx="58" cy="52" r="2.6" fill="var(--berry)"/>
+    </svg>
 </div>
 
 <header class="site-header">
-    <h1 class="title"><span id="festa-titolo">Giulia</span></h1>
-    <p class="turning">COMPIE <span id="festa-eta"></span> ANNO</p>
+    <h1 class="title"><span id="festa-titolo">Buon Natale!</span></h1>
+    <p class="turning" id="festa-turning" hidden>COMPIE <span id="festa-eta"></span> ANNO</p>
     <p class="subtitle" id="festa-sottotitolo"></p>
 </header>
 
 <main class="page">
     <section class="wishes-note" aria-labelledby="wishes-note-title">
-        <p class="wishes-note-lead" id="wishes-note-title">Manca poco al primo compleanno di Giulia! 🎉</p>
-        <p>Lo sapete: non è necessario nessun regalo. Ci basta la vostra presenza per spegnere la candelina insieme! Se
-            vorrete scriverle un bigliettino di auguri, lo metteremo nel suo album dei ricordi, così potrà vederlo tra
-            qualche anno.</p>
-        <p>Se ci tenete comunque a farle un regalino, ecco tre nostre piccole preferenze:</p>
+        <p id="wishes-note-title">Se siete in cerca di un regalino per Giulia, ecco qui qualche spunto! Se avete altre
+            idee, sono benvenute: scriveteci solo per evitare i doppioni!</p>
+        <p>In generale, vi condividiamo alcune nostre preferenze:</p>
         <ul class="wishes-note-list">
             <li><span aria-hidden="true">🌎</span>
                 <div><strong>Puntiamo all'utile o al futuro.</strong> In questa pagina trovate alcune cose che possono
                     piacerle o servirle e non abbiamo ancora. In alternativa, abbiamo creato un <strong>“Fondo desideri
                         da grande”</strong>: un fondo che investiamo a lungo termine per i suoi desideri futuri, tutti i
-                    soldini che riceve Giulia finiscono lì!<br>Se avete altre idee, sono benvenute: scriveteci solo per
-                    evitare i doppioni!
+                    soldini che riceve Giulia finiscono lì!
                 </div>
             </li>
             <li><span aria-hidden="true">🌱</span>
                 <div><strong>Sì al riciclo.</strong> Vinted, mercatini dell'usato e oggetti di seconda mano sono super
-                    approvati! Ci piace l'idea di dare una seconda vita a questi oggetti! 🕶️
+                    approvati! Ci piace l'idea di dare una seconda vita a questi oggetti! 🪴
                 </div>
             </li>
             <li><span aria-hidden="true">👕</span>
                 <div><strong>Bando ai vestiti!</strong> Fortunatamente Giulia ha già ricevuto tanti abiti dalle sue
                     amichette più grandi e cresce in fretta: non riusciremmo a sfruttarli come si deve. I capi di
-                    vestiario di cui ha bisogno sono in lista qui sotto! Fanno eccezione i vestiti di seconda mano 😁
+                    vestiario di cui ha bisogno sono in lista qui sotto!
                 </div>
             </li>
         </ul>
@@ -55,7 +72,7 @@
     </section>
 
     <section class="section intro" aria-label="Introduzione alla lista regali">
-        <h2 class="section-title">Idee regalo <span class="flower" aria-hidden="true">🌼</span></h2>
+        <h2 class="section-title">Idee regalo <span class="flake" aria-hidden="true">❄︎</span></h2>
 
         <p class="how-it-works-wrapper">
             <button center type="button" class="how-it-works-link" onclick="document.getElementById('info-modal').showModal()">
@@ -93,7 +110,7 @@
     </section>
 
     <footer class="site-footer">
-        <p>Grazie di essere con noi! <span class="flower" aria-hidden="true">🌻</span></p>
+        <p>Grazie di essere con noi! <span class="flake" aria-hidden="true">❄︎</span></p>
     </footer>
 </main>
 
