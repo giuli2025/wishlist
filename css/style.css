@@ -12,6 +12,7 @@
   --sage-soft:#DDE7D2;
   --sun:      #F6C453;
   --sun-soft: #FCE8B3;
+  --berry:    #C4553F;
   --ink:      #33402F;
   --ink-soft: #6B7564;
   --white:    #FFFFFF;
@@ -42,31 +43,47 @@ body {
   min-height: 100vh;
 }
 
-/* ---------- Decorazioni (sole + petali + foglie) ---------- */
+/* ---------- Decorazioni (sole basso + neve + rametti di pino) ---------- */
 .decoration { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
 .decoration > span { position: absolute; opacity: 0.55; }
 
-.petal {
-  width: 26px; height: 26px; border-radius: 50% 50% 50% 0;
-  background: radial-gradient(circle at 30% 30%, #FFE28A, #F9C25B);
-  box-shadow: inset -2px -2px 0 rgba(210, 150, 40, 0.15);
+/* Neve: due strati di puntini che scendono a velocità diverse.
+   Ogni strato trasla di esattamente una tile, così il loop non ha salti. */
+.decoration::before,
+.decoration::after {
+  content: "";
+  position: absolute;
+  top: -100%; left: 0; right: 0; bottom: 0;
+  background-repeat: repeat;
 }
-.p1 { top: 8%; left: 6%; transform: rotate(-20deg); }
-.p2 { top: 58%; left: 92%; transform: rotate(120deg); scale: 1.2; }
-.p3 { bottom: 6%; left: 10%; transform: rotate(40deg); scale: 0.9; }
+.decoration::before {
+  background-image: radial-gradient(circle, rgba(160, 184, 212, 0.8) 0 1.7px, transparent 1.9px);
+  background-size: 190px 270px;
+  background-position: 24px 0;
+  animation: snowFallA 24s linear infinite;
+}
+.decoration::after {
+  background-image: radial-gradient(circle, rgba(160, 184, 212, 0.5) 0 1.2px, transparent 1.4px);
+  background-size: 130px 190px;
+  background-position: 68px 46px;
+  animation: snowFallB 16s linear infinite;
+}
+@keyframes snowFallA { from { transform: translateY(-270px); } to { transform: translateY(0); } }
+@keyframes snowFallB { from { transform: translateY(-190px); } to { transform: translateY(0); } }
 
-.leaf {
-  width: 22px; height: 34px; border-radius: 70% 0 70% 0;
-  background: linear-gradient(135deg, #B7CB9D, #8FAE8B);
+.sprig {
+  position: absolute;
+  width: clamp(90px, 11vw, 132px); height: auto;
+  color: var(--sage); opacity: 0.8;
 }
-.l1 { top: 22%; right: 4%; transform: rotate(20deg); }
-.l2 { bottom: 24%; left: 3%; transform: rotate(-150deg); scale: 1.1; }
+.sprig-tr { top: -10px; right: -14px; transform: rotate(186deg); }
+.sprig-bl { bottom: -10px; left: -14px; transform: rotate(6deg); }
 
 .sun {
-  width: 70px; height: 70px; border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #FFD97A, #F6C453);
-  box-shadow: 0 0 40px rgba(246, 196, 83, 0.7);
-  top: 3%; right: 10%;
+  width: 64px; height: 64px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #FFE7AE, #F4CE84);
+  box-shadow: 0 0 46px rgba(246, 196, 83, 0.55);
+  top: 4%; right: 24%;
   animation: sunPulse 6s ease-in-out infinite;
 }
 @keyframes sunPulse {
@@ -89,7 +106,7 @@ body {
 .title {
   font-family: var(--font-title);
   font-weight: 500;
-  font-size: clamp(4.4rem, 13vw, 8rem);
+  font-size: clamp(2.2rem, 9vw, 7.5rem);
   margin: -0.1em 0 -0.15em;
   color: #E7BA2F;
   letter-spacing: -0.025em;
@@ -370,6 +387,7 @@ body {
   .card-actions { grid-template-columns: 1fr; }
   .info-grid { grid-template-columns: 1fr; }
   .hero-frame { aspect-ratio: 4/3; }
+  .sun { top: auto; bottom: 6%; right: 10%; }
 }
 
 /* ---------- Reduced motion ---------- */

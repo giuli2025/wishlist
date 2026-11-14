@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Il compleanno di Giulia 🎉</title>
+    <title>Buon Natale! 🎄</title>
     <meta name="description"
-          content="La lista dei regali per il compleanno di Giulia. La vostra presenza sarà il regalo più bello!"/>
+          content="La lista dei regali per Giulia. La vostra presenza sarà il regalo più bello!"/>
     <link rel="icon"
           href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌼</text></svg>"/>
     <link rel="stylesheet" href="css/fonts.css"/>
@@ -13,13 +13,37 @@
 </head>
 <body>
 <div class="decoration" aria-hidden="true">
-    <span class="petal p1"></span><span class="petal p2"></span><span class="petal p3"></span>
-    <span class="leaf l1"></span><span class="leaf l2"></span><span class="sun"></span>
+    <span class="sun"></span>
+    <svg class="sprig sprig-tr" viewBox="0 0 120 96">
+        <path d="M4 92 C 32 74, 64 46, 100 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <g stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none">
+            <path d="M18 81 L 6 71"/><path d="M28 74 L 16 62"/><path d="M38 67 L 26 55"/>
+            <path d="M48 60 L 38 48"/><path d="M58 52 L 50 39"/><path d="M68 45 L 62 32"/>
+            <path d="M78 37 L 74 24"/><path d="M88 29 L 86 17"/>
+            <path d="M18 81 L 30 71"/><path d="M28 74 L 42 65"/><path d="M38 67 L 52 59"/>
+            <path d="M48 60 L 62 52"/><path d="M58 52 L 72 46"/><path d="M68 45 L 82 40"/>
+            <path d="M78 37 L 92 34"/>
+        </g>
+        <circle cx="40" cy="70" r="2.6" fill="var(--berry)"/>
+        <circle cx="72" cy="47" r="2.4" fill="var(--berry)"/>
+    </svg>
+    <svg class="sprig sprig-bl" viewBox="0 0 120 96">
+        <path d="M4 92 C 32 74, 64 46, 100 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <g stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none">
+            <path d="M18 81 L 6 71"/><path d="M28 74 L 16 62"/><path d="M38 67 L 26 55"/>
+            <path d="M48 60 L 38 48"/><path d="M58 52 L 50 39"/><path d="M68 45 L 62 32"/>
+            <path d="M78 37 L 74 24"/><path d="M88 29 L 86 17"/>
+            <path d="M18 81 L 30 71"/><path d="M28 74 L 42 65"/><path d="M38 67 L 52 59"/>
+            <path d="M48 60 L 62 52"/><path d="M58 52 L 72 46"/><path d="M68 45 L 82 40"/>
+            <path d="M78 37 L 92 34"/>
+        </g>
+        <circle cx="52" cy="60" r="2.6" fill="var(--berry)"/>
+    </svg>
 </div>
 
 <header class="site-header">
-    <h1 class="title"><span id="festa-titolo">Giulia</span></h1>
-    <p class="turning">COMPIE <span id="festa-eta"></span> ANNO</p>
+    <h1 class="title"><span id="festa-titolo">Buon Natale!</span></h1>
+    <p class="turning" id="festa-turning" hidden>COMPIE <span id="festa-eta"></span> ANNO</p>
     <p class="subtitle" id="festa-sottotitolo"></p>
 </header>
 
