@@ -57,16 +57,22 @@ body {
   background-repeat: repeat;
 }
 .decoration::before {
-  background-image: radial-gradient(circle, rgba(160, 184, 212, 0.8) 0 1.7px, transparent 1.9px);
+  background-image: radial-gradient(circle,
+    rgba(160, 184, 212, 0.9) 0 1.4px,
+    rgba(160, 184, 212, 0.35) 2.4px,
+    transparent 3.2px);
   background-size: 190px 270px;
   background-position: 24px 0;
-  animation: snowFallA 24s linear infinite;
+  animation: snowFallA 15s linear infinite;
 }
 .decoration::after {
-  background-image: radial-gradient(circle, rgba(160, 184, 212, 0.5) 0 1.2px, transparent 1.4px);
+  background-image: radial-gradient(circle,
+    rgba(160, 184, 212, 0.6) 0 1px,
+    rgba(160, 184, 212, 0.2) 1.8px,
+    transparent 2.5px);
   background-size: 130px 190px;
   background-position: 68px 46px;
-  animation: snowFallB 16s linear infinite;
+  animation: snowFallB 10s linear infinite;
 }
 @keyframes snowFallA { from { transform: translateY(-270px); } to { transform: translateY(0); } }
 @keyframes snowFallB { from { transform: translateY(-190px); } to { transform: translateY(0); } }
