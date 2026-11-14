@@ -57,7 +57,7 @@ const CONFIG = {
   festa: {
     nome: "Giulia",
     eta: "", // età che compie (vuoto = nasconde la riga "COMPIE … ANNO")
-    titolo: "Buon Natale Giulia!",
+    titolo: "Buon Natale!",
     emoji: "🎄",
     sottotitolo: "",
     intro:
