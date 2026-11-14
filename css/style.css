@@ -1,7 +1,7 @@
 /* ============================================================
-   giuli-wishes — Sunshine & Petals
-   Palette: giallo sole · bianco/cream · verde salvia
-   Font: Caveat (titoli) + Nunito (testo)
+   giuli-wishes — Sunshine & Petals, versione invernale
+   Palette: giallo sole · bianco/cream · verde salvia · bacche rosse
+   Font: Dancing Script (titoli) + Montserrat (testo)
    ============================================================ */
 
 :root {
@@ -79,10 +79,11 @@ body {
 .sprig-tr { top: -10px; right: -14px; transform: rotate(186deg); }
 .sprig-bl { bottom: -10px; left: -14px; transform: rotate(6deg); }
 
+/* Sole d'inverno: pallido, e su mobile scende in basso a destra */
 .sun {
   width: 64px; height: 64px; border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #FFE7AE, #F4CE84);
-  box-shadow: 0 0 46px rgba(246, 196, 83, 0.55);
+  background: radial-gradient(circle at 35% 35%, #FFF4DC, #F6DCAC);
+  box-shadow: 0 0 42px rgba(246, 196, 83, 0.38);
   top: 4%; right: 24%;
   animation: sunPulse 6s ease-in-out infinite;
 }

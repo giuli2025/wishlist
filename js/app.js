@@ -371,7 +371,7 @@
 
   function renderFesta() {
     const f = CONFIG.festa;
-    document.title = f.titolo + " " + (f.emoji || "");
+    document.title = [f.titolo, f.emoji].filter(Boolean).join(" ");
     elem("festa-titolo").textContent = f.titolo;
     elem("festa-eta").textContent = f.eta;
     elem("festa-turning").hidden = !f.eta;
